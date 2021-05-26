@@ -1,0 +1,17 @@
+name: www
+version: 0.1.0
+
+authors:
+  - Tatsujin Chin <c910335@gmail.com>
+
+crystal: 1.0.0
+
+license: MIT
+
+development_dependencies:
+  webmock:
+    github: manastech/webmock.cr
+
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 0.14.3
