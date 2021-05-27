@@ -19,6 +19,17 @@ class WWW
   end
 end
 
+macro www(subdomain)
+  {% subdomain = subdomain.id %}
+  class {{subdomain.capitalize}} < WWW
+    @url = "https://{{subdomain}}"
+  end
+
+  def {{subdomain}}
+    {{subdomain.capitalize}}.new
+  end
+end
+
 def www
   WWW.new
 end
