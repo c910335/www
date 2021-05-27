@@ -5,15 +5,11 @@ class WWW
 
   setter url = "https://www"
 
+  delegate inspect, to: to_s
+
   macro method_missing(name)
     self.url = self.@url + ".{{name}}"
     self
-  end
-
-  def inspect
-    HTTP::Client.get(@url) do |res|
-      return res.body_io.gets_to_end.inspect
-    end
   end
 
   def to_s(io)
