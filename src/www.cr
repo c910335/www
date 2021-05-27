@@ -21,12 +21,12 @@ end
 
 macro www(subdomain)
   {% subdomain = subdomain.id %}
-  class {{subdomain.capitalize}} < WWW
+  class WWW::{{subdomain.capitalize}} < WWW
     @url = "https://{{subdomain}}"
   end
 
   def {{subdomain}}
-    {{subdomain.capitalize}}.new
+    WWW::{{subdomain.capitalize}}.new
   end
 end
 
